@@ -1,0 +1,34 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stylish Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="calculator">
+        <h1>🌟 Stylish Calculator</h1>
+        <form method="POST">
+            <input type="number" name="num1" step="any" placeholder="Enter First Number" required>
+            <input type="number" name="num2" step="any" placeholder="Enter Second Number (if needed)">
+
+            <div class="buttons">
+                <button name="operation" value="add">➕ Add</button>
+                <button name="operation" value="subtract">➖ Subtract</button>
+                <button name="operation" value="multiply">✖ Multiply</button>
+                <button name="operation" value="divide">➗ Divide</button>
+                <button name="operation" value="modulus">% Modulus</button>
+                <button name="operation" value="power">xⁿ Power</button>
+                <button name="operation" value="sqrt">√ Square Root</button>
+            </div>
+        </form>
+
+        {% if result is not none %}
+        <div class="output">
+            <h2>🔎 Result: {{ result }}</h2>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
